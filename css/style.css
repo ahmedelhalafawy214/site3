@@ -1,0 +1,296 @@
+.list-product{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 40px;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.list-product li{
+    margin: 10px 10px;
+}
+.products-items{
+  display: grid;
+ grid-template-columns: repeat(3,1fr);
+ grid-gap:5px;
+ margin: 20px 70px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.products{
+    background-color: rgb(10, 130, 146);
+}
+.product-img{
+ position: relative;
+}
+.product-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform:scalex(0);
+    opacity: 0.9;
+    transition: transform 0.2s;
+}
+/* .product-overlay ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.product-overlay ul li{
+    width: 40px;
+    height: 40px;
+    background-color: var(--maincolor);
+    display: inline-block;
+    text-align: center;
+}
+.product-overlay ul li i{
+    color:blue;
+    line-height: 40px;
+} */
+.product-item:hover .product-overlay{
+    
+    transform: scalex(1);
+}
+.product-item i.active{
+    color: yellow;
+}
+.product-info span{
+    display: block;
+    margin: 5px 0;
+    font-size: 23px;
+    font-weight: bold;
+    color:rgb(75, 13, 133) ;
+}
+.product-info i{
+    margin-top: 10px;
+}
+.list-product:before,
+.list-product:after{
+content:"";
+position: absolute;
+border-style: solid; 
+left: 0;
+top:0; 
+transition: transform .5s;
+}
+.list-product:before{
+    border-width: 0 2px;
+    height: 100%; 
+    width: 102%;
+    transform: scale3d(1,0,1);
+}
+.list-product:hover:before{
+ transform: scale3d(1,1,1);
+}
+.list-product:after{
+border-width: 2px 0;
+height: 95%; 
+width: 103%;
+transform: scale3d(0,1,1);
+
+}
+.list-product:hover:after{
+ transform: scale3d(1,1,1);
+ transition-delay: .5s;
+}
+.header-content ul li a {
+    /* color:var(--maincolor); */
+    color: rgb(38, 5, 128);
+}
+.list-product li{
+    position: relative;
+    padding: 10px 19px;
+    display: block;
+    font-weight: bold;
+    position: relative;
+    margin-left: 30px;
+    text-shadow: rgb(12, 6, 39) 2px 2px 20px;
+    font-style: italic;
+    cursor: pointer;
+}
+.list-product li:before,
+.list-product li:after{
+content:"";
+position: absolute;
+border-style: solid; 
+left: 0;
+top:0; 
+transition: transform .5s;
+}
+.list-product li:before{
+    border-width: 0 2px;
+    height: 90%; 
+    width: 100%;
+    transform: scale3d(1,0,1);
+}
+.list-product li:hover:before{
+ transform: scale3d(1,1,1);
+}
+.list-product li:after{
+border-width: 2px 0;
+height: 90%; 
+width: 100%;
+transform: scale3d(0,1,1);
+
+}
+.list-product li:hover:after{
+ transform: scale3d(1,1,1);
+ transition-delay: .5s;
+}
+.header-content .login ul li  {
+    padding: 10px ;
+    font-weight: bold;
+}
+.header-content .login ul li:last-child i {
+ position: relative;
+ margin-right: 11px;
+}
+.header-content .login ul li:last-child i::after{
+    position: absolute;
+    content: "0";
+    background-color: var(--maincolor);
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px;
+    font-size: 13px;
+    bottom: -4px;
+}
+.discount {
+    margin:20px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(10, 130, 146);
+    /* position: relative; */
+}
+.discount-desc{
+    /* flex:2; */
+    padding: 15px;
+    /* position: relative; */
+    overflow: hidden;
+    
+    
+}
+.discount-item1, .discount-item2 {
+    /* flex: 1; */
+    height: 100%;
+    width: 80%;
+    position: relative;
+    border-radius: 20px;
+    background-size: cover;
+}
+.discount-item-info{
+    position: absolute;
+    top:20px;
+    left: 15px;
+}
+.discount-item-info h3{
+    font-weight:bold;
+    color: blue;
+    font-size: 35px;
+    cursor: pointer;
+    position: relative;
+}
+.discount-item-info h2{
+    font-size: 40px;
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+    /* position: relative; */
+}
+ .discount-item1{
+    background-image: url(../Images/istockphoto-1148294777-612x612.jpg);
+    background-size: cover;
+    margin:5px 20px;
+    height: 400px;
+    transition: transform 1.3s;
+    animation-name: change2 ;
+    animation-duration: 8s ;
+
+    animation-delay: 1s ;
+    animation-iteration-count: infinite  ;
+    animation-timing-function: linear;
+}
+@keyframes change2{
+    25%{background-image: url(../Images/istockphoto-1028095390-612x612.jpg);background-size: cover}
+    50%{background-image: url(../Images/istockphoto-1168780525-612x612.jpg);background-size: cover}
+    75%{background-image: url(../Images/istockphoto-1353977338-612x612.jpg); background-size: cover;}
+    
+
+}
+ .discount-item1:hover{
+    transform: scale(1.15); 
+    /* animation-play-state: paused; */
+}
+.discount-desc .top{
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+.discount-desc .top .icon{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: 30px;
+    color: blueviolet;
+}
+.discount-desc .top +p{
+    line-height: 1.5;
+    width: 100%;
+    height: 300px;
+    text-align:start;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(41, 7, 73);
+    overflow: auto;
+}
+.discount-desc .bullets span{
+     display: inline-block;
+     width:50px;
+     height: 2px;
+     background: var(--maincolor);
+     margin-left: 10px;
+}
+.discount-desc .bullets{
+    text-align: right;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+/* .discount-item2{
+    background-image: url(../Images/footbridge-sea-beach-meditation-journey-calm-hormone-sunset-sea-yoga-footbridge-sea-beach-meditation-journey-calm-hormone-128381503.jpg);
+    background-size: cover; 
+    transition: transform 1.3s;
+    margin:5px 20px;
+    height: 400px;
+    transition: transform 1.3s;
+    animation-name: change2  ;
+    animation-duration: 10s ;
+
+    animation-delay: 0s ;
+    animation-iteration-count: infinite  ;
+    animation-timing-function: linear;
+}
+@keyframes change2{
+    20%{background-image: url(../Images/portrait-relax-woman-reading-book-couch-home-173141780.jpg);background-size: cover}
+    25%{background-image: url(../Images/istockphoto-157656846-612x612.jpg);background-size: cover}
+    50%{background-image: url(../Images/zen-meditation-garden-simplicity-harmony-26137161.jpg); background-size: cover;}
+    75%{background-image: url(../Images/nebula-milky-way-meditation-under-moon-189937389.jpg);background-size: cover}
+} */
+.discount-item2:hover{
+    transform: scale(1.15);
+    animation-play-state: paused;
+}
+.badge{
+    font-size: 18px;
+
+}
+h4 a{
+    color: #fff;
+}
